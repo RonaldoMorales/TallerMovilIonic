@@ -1,0 +1,7 @@
+{
+  "name": "TallerMovil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
