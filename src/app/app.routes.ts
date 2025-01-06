@@ -1,8 +1,24 @@
-import { Routes } from '@angular/router';
+import { Route } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
+import { PrincipalComponent } from './components/principal/principal.component'; // Importa el componente PrincipalComponent
 
-export const routes: Routes = [
+export const routes: Route[] = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
+    redirectTo: 'login', 
+    pathMatch: 'full'
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'principal',
+    component: PrincipalComponent 
+  },
+  {
+    path: '**', 
+    redirectTo: 'login'
+  }
 ];
